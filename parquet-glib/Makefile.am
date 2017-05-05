@@ -33,6 +33,10 @@ libparquet_glib_la_CXXFLAGS =			\
 	$(GARROW_CFLAGS)			\
 	$(GPARQUET_CXXFLAGS)
 
+libparquet_glib_la_LDFLAGS =			\
+	-version-info $(LT_VERSION_INFO)	\
+	-no-undefined
+
 libparquet_glib_la_LIBADD =			\
 	$(GLIB_LIBS)				\
 	$(PARQUET_ARROW_LIBS)			\
