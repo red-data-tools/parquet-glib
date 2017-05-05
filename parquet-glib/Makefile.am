@@ -44,7 +44,8 @@ libparquet_glib_la_LIBADD =			\
 
 libparquet_glib_la_headers =			\
 	arrow-file-reader.h			\
-	arrow-file-writer.h
+	arrow-file-reader.h			\
+	parquet-glib.h
 
 libparquet_glib_la_sources =			\
 	arrow-file-reader.cpp			\
@@ -53,7 +54,8 @@ libparquet_glib_la_sources =			\
 
 libparquet_glib_la_cpp_headers =		\
 	arrow-file-reader.hpp			\
-	arrow-file-writer.hpp
+	arrow-file-writer.hpp			\
+	parquet-glib.hpp
 
 libparquet_glib_la_SOURCES =			\
 	$(libparquet_glib_la_sources)		\
