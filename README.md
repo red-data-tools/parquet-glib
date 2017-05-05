@@ -34,14 +34,9 @@ Parquet = GI.load("Parquet")
 # TODO
 ```
 
-In Ruby case, you should use
-[red-arrow gem](https://rubygems.org/gems/red-arrow). It's based on
-gobject-introspection gem. It adds many convenient features to raw
-gobject-introspection gem based bindings.
-
 ## Install
 
-You can use packages or build by yourself to install Arrow GLib. It's
+You can use packages or build by yourself to install Parquet GLib. It's
 recommended that you use packages.
 
 Note that the packages are "unofficial". "Official" packages will be
@@ -52,12 +47,11 @@ released in the future.
 There are supported platforms:
 
   * Debian GNU/Linux Jessie
-  * Ubuntu 16.04 LTS
-  * Ubuntu 16.10
+  * Ubuntu 16.04 LTS or later
   * CentOS 7
 
-You can feedback to https://github.com/kou/arrow-packages about
-packages things.
+You can feedback to https://github.com/red-data-tools/arrow-packages
+about packages things.
 
 #### Debian GNU/Linux jessie
 
@@ -77,13 +71,13 @@ Then you need to run the following command lines:
 % sudo apt update
 ```
 
-Now you can install Arrow GLib packages:
+Now you can install Parquet GLib packages:
 
 ```text
-% sudo apt install -y libarrow-glib-dev
+% sudo apt install -y libparquet-glib-dev
 ```
 
-#### Ubuntu 16.04 LTS and Ubuntu 16.10
+#### Ubuntu 16.04 LTS or later
 
 You need to add an APT repository:
 
@@ -93,10 +87,10 @@ You need to add an APT repository:
 % sudo apt update
 ```
 
-Now you can install Arrow GLib packages:
+Now you can install Parquet GLib packages:
 
 ```text
-% sudo apt install -y libarrow-glib-dev
+% sudo apt install -y libparquet-glib-dev
 ```
 
 #### CentOS 7
@@ -107,30 +101,33 @@ You need to add a Yum repository:
 % sudo yum install -y https://packages.groonga.org/centos/groonga-release-1.3.0-1.noarch.rpm
 ```
 
-Now you can install Arrow GLib packages:
+Now you can install Parquet GLib packages:
 
 ```text
-% sudo yum install -y --enablerepo=epel arrow-glib-devel
+% sudo yum install -y --enablerepo=epel parquet-glib-devel
 ```
 
 ### How to build by users
 
-Arrow GLib users should use released source archive to build Arrow
+Parquet GLib users should use released source archive to build Parquet
 GLib:
 
 ```text
-% wget https://dist.apache.org/repos/dist/release/arrow/arrow-0.3.0/apache-arrow-0.3.0.tar.gz
-% tar xf apache-arrow-0.3.0.tar.gz
-% cd apache-arrow-0.3.0
+% wget https://github.com/red-data-tools/parquet-glib/releases/download/1.0.0/parquet-glib-1.0.0.tar.gz
+% tar xf parquet-glib-1.0.0.tar.gz
+% cd parquet-glib-1.0.0
 ```
 
-You need to build and install Arrow C++ before you build and install
-Arrow GLib. See Arrow C++ document about how to install Arrow C++.
+You need to install
+[Parquet C++](https://github.com/apache/parquet-cpp),
+[Arrow C++](https://github.com/apache/arrow/tree/master/cpp) and
+[Arrow GLib](https://github.com/apache/arrow/tree/master/c_glib)
+before you install Parquet GLib. See documents about how to install
+them.
 
-You can build and install Arrow GLib after you install Arrow C++:
+You can build and install Parquet GLib after you install them:
 
 ```text
-% cd c_glib
 % ./configure
 % make
 % sudo make install
@@ -138,12 +135,17 @@ You can build and install Arrow GLib after you install Arrow C++:
 
 ### How to build by developers
 
-You need to install Arrow C++ before you install Arrow GLib. See Arrow
-C++ document about how to install Arrow C++.
+
+You need to install
+[Parquet C++](https://github.com/apache/parquet-cpp),
+[Arrow C++](https://github.com/apache/arrow/tree/master/cpp) and
+[Arrow GLib](https://github.com/apache/arrow/tree/master/c_glib)
+before you install Parquet GLib. See documents about how to install
+them.
 
 You need [GTK-Doc](https://www.gtk.org/gtk-doc/) and
-[GObject Introspection](https://wiki.gnome.org/action/show/Projects/GObjectIntrospection)
-to build Arrow GLib. You can install them by the followings:
+[GObject Introspection](https://wiki.gnome.org/Projects/GObjectIntrospection)
+to build Parquet GLib. You can install them by the followings:
 
 On Debian GNU/Linux or Ubuntu:
 
@@ -166,7 +168,6 @@ On macOS with [Homebrew](https://brew.sh/):
 Now, you can build Arrow GLib:
 
 ```text
-% cd c_glib
 % ./autogen.sh
 % ./configure --enable-gtk-doc
 % make
@@ -175,33 +176,18 @@ Now, you can build Arrow GLib:
 
 ## Usage
 
-You can use Arrow GLib with C or other languages. If you use Arrow
-GLib with C, you use C API. If you use Arrow GLib with other
+You can use Parquet GLib with C or other languages. If you use Parquet
+GLib with C, you use C API. If you use Parquet GLib with other
 languages, you use GObject Introspection based bindings.
 
 ### C
 
 You can find API reference in the
-`/usr/local/share/gtk-doc/html/arrow-glib/` directory. If you specify
-`--prefix` to `configure`, the directory will be different.
+`/usr/local/share/gtk-doc/html/parquet-glib/` directory. If you
+specify `--prefix` to `configure`, the directory will be different.
 
-You can find example codes in the `example/` directory.
+TODO: Examples
 
 ### Language bindings
 
-You can use Arrow GLib with non C languages with GObject Introspection
-based bindings. Here are languages that support GObject Introspection:
-
-  * Ruby: [red-arrow gem](https://rubygems.org/gems/red-arrow) should be used.
-    * Examples: https://github.com/red-data-tools/red-arrow/tree/master/example
-
-  * Python: [PyGObject](https://wiki.gnome.org/Projects/PyGObject) should be used. (Note that you should use PyArrow than Arrow GLib.)
-
-  * Lua: [LGI](https://github.com/pavouk/lgi) should be used.
-    * Examples: `example/lua/` directory.
-
-  * Go: [Go-gir-generator](https://github.com/linuxdeepin/go-gir-generator) should be used.
-
-See also
-[Projects/GObjectIntrospection/Users - GNOME Wiki!](https://wiki.gnome.org/Projects/GObjectIntrospection/Users)
-for other languages.
+TODO
