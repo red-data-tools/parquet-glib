@@ -1,0 +1,2 @@
+Parquet GLib
+Copyright 2017 Kouhei Sutou <kou@clear-code.com>
