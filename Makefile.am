@@ -17,6 +17,8 @@ SUBDIRS =					\
 	doc
 
 EXTRA_DIST =					\
+	LICENSE.txt				\
+	NOTICE.txt				\
 	README.md
 
 parquet_glib_docdir = ${datarootdir}/doc/parquet-glib
