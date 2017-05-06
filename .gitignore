@@ -21,7 +21,6 @@ Makefile.in
 *.la
 *.pc
 *~
-/LICENSE.txt
 /*.tar.gz
 /aclocal.m4
 /autom4te.cache/
