@@ -12,7 +12,7 @@
 
 AC_PREREQ(2.65)
 
-AC_INIT([parquet-glib], [1.0.0])
+AC_INIT([parquet-glib], [1.0.1])
 AC_CONFIG_AUX_DIR([config])
 AC_CONFIG_MACRO_DIR([m4])
 
