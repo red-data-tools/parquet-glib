@@ -42,6 +42,7 @@ Makefile.in
 /doc/reference/*.stamp
 /doc/reference/html/
 /doc/reference/xml/
+/github-release
 /libtool
 /m4/
 /stamp-h1
