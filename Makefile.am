@@ -24,3 +24,25 @@ EXTRA_DIST =					\
 parquet_glib_docdir = ${datarootdir}/doc/parquet-glib
 parquet_glib_doc_DATA =				\
 	README.md
+
+tag:
+	git tag -a -m '$(VERSION) has been released!!!' $(VERSION)
+	git push --tags
+
+GITHUB_RELEASE_VERSION = 0.7.2
+github-release:
+	wget https://github.com/aktau/github-release/releases/download/v$(GITHUB_RELEASE_VERSION)/linux-amd64-github-release.tar.bz2
+	tar xvf linux-amd64-github-release.tar.bz2
+	mv bin/linux/amd64/github-release ./
+	rm -rf bin/
+
+archive = $(PACKAGE)-$(VERSION).tar.gz
+release: github-release $(archive)
+	@[ -n "$${GITHUB_TOKEN}" ] || \
+	  (echo "GITHUB_TOKEN environment variable isn't set"; false)
+	./github-release upload \
+	  --user red-data-tools \
+	  --repo parquet-glib \
+	  --tag $(VERSION) \
+	  --name $(archive) \
+	  --file $(archive)
