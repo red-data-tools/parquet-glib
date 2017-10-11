@@ -20,7 +20,7 @@ AM_CPPFLAGS =					\
 
 AM_CFLAGS =					\
 	$(GLIB_CFLAGS)				\
-	$(PARQUET_ARROW_CFLAGS)			\
+	$(PARQUET_CFLAGS)			\
 	$(GARROW_CFLAGS)			\
 	$(GPARQUET_CFLAGS)
 
@@ -29,7 +29,7 @@ lib_LTLIBRARIES =				\
 
 libparquet_glib_la_CXXFLAGS =			\
 	$(GLIB_CFLAGS)				\
-	$(PARQUET_ARROW_CFLAGS)			\
+	$(PARQUET_CFLAGS)			\
 	$(GARROW_CFLAGS)			\
 	$(GPARQUET_CXXFLAGS)
 
@@ -39,7 +39,7 @@ libparquet_glib_la_LDFLAGS =			\
 
 libparquet_glib_la_LIBADD =			\
 	$(GLIB_LIBS)				\
-	$(PARQUET_ARROW_LIBS)			\
+	$(PARQUET_LIBS)				\
 	$(GARROW_LIBS)
 
 libparquet_glib_la_headers =			\
