@@ -39,11 +39,15 @@ github-release:
 
 archive = $(PACKAGE)-$(VERSION).tar.gz
 release: github-release $(archive)
-	@[ -n "$${GITHUB_TOKEN}" ] || \
+	@[ -n "$${GITHUB_TOKEN}" ] ||					\
 	  (echo "GITHUB_TOKEN environment variable isn't set"; false)
-	./github-release upload \
-	  --user red-data-tools \
-	  --repo parquet-glib \
-	  --tag $(VERSION) \
-	  --name $(archive) \
+	./github-release release		\
+	  --user red-data-tools			\
+	  --repo parquet-glib			\
+	  --tag $(VERSION)
+	./github-release upload			\
+	  --user red-data-tools			\
+	  --repo parquet-glib			\
+	  --tag $(VERSION)			\
+	  --name $(archive)			\
 	  --file $(archive)
