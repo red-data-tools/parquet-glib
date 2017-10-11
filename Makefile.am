@@ -33,6 +33,7 @@ GITHUB_RELEASE_VERSION = 0.7.2
 github-release:
 	wget https://github.com/aktau/github-release/releases/download/v$(GITHUB_RELEASE_VERSION)/linux-amd64-github-release.tar.bz2
 	tar xvf linux-amd64-github-release.tar.bz2
+	rm -f linux-amd64-github-release.tar.bz2
 	mv bin/linux/amd64/github-release ./
 	rm -rf bin/
 
