@@ -71,12 +71,12 @@ pkgconfig_DATA =				\
 	parquet-glib.pc
 
 # GObject Introspection
+if HAVE_INTROSPECTION
 -include $(INTROSPECTION_MAKEFILE)
 INTROSPECTION_GIRS =
 INTROSPECTION_SCANNER_ARGS =
 INTROSPECTION_COMPILER_ARGS =
 
-if HAVE_INTROSPECTION
 Parquet-1.0.gir: libparquet-glib.la
 Parquet_1_0_gir_PACKAGES =			\
 	gobject-2.0				\
