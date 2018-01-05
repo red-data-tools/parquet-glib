@@ -56,6 +56,16 @@ fi
 AC_SUBST(GPARQUET_CFLAGS)
 AC_SUBST(GPARQUET_CXXFLAGS)
 
+AC_ARG_WITH(gir-dir,
+  [AS_HELP_STRING([--with-gir-dir],
+                  [Path to additional .gir files])],
+  [GPARQUET_GIR_DIR="$withval"],
+  [GPARQUET_GIR_DIR=""])
+AC_MSG_CHECKING([for --with-gir-dir])
+AC_MSG_RESULT([$GPARQUET_GIR_DIR])
+AC_SUBST(GPARQUET_GIR_DIR)
+AM_CONDITIONAL(HAVE_GPARQUET_GIR_DIR, test -n "$GPARQUET_GIR_DIR")
+
 AM_PATH_GLIB_2_0([2.32.4], [], [], [gobject])
 
 GOBJECT_INTROSPECTION_REQUIRE([1.32.1])

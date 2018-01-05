@@ -77,6 +77,13 @@ INTROSPECTION_GIRS =
 INTROSPECTION_SCANNER_ARGS =
 INTROSPECTION_COMPILER_ARGS =
 
+if HAVE_GPARQUET_GIR_DIR
+INTROSPECTION_SCANNER_ARGS +=				\
+	--add-include-path=/tmp/local/share/gir-1.0
+INTROSPECTION_COMPILER_ARGS +=			\
+	--includedir=/tmp/local/share/gir-1.0
+endif
+
 Parquet-1.0.gir: libparquet-glib.la
 Parquet_1_0_gir_PACKAGES =			\
 	gobject-2.0				\
