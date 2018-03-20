@@ -43,21 +43,21 @@ recommended that you use packages.
 
 There are supported platforms:
 
-  * Debian GNU/Linux Jessie
+  * Debian GNU/Linux Stretch
   * Ubuntu 16.04 LTS or later
   * CentOS 7
 
 You can feedback to https://github.com/red-data-tools/arrow-packages
 about packages things.
 
-#### Debian GNU/Linux jessie
+#### Debian GNU/Linux Stretch
 
 You need to add the following apt-lines to
 `/etc/apt/sources.list.d/groonga.list`:
 
 ```text
-deb https://packages.groonga.org/debian/ jessie main
-deb-src https://packages.groonga.org/debian/ jessie main
+deb https://packages.groonga.org/debian/ stretch main
+deb-src https://packages.groonga.org/debian/ stretch main
 ```
 
 Then you need to run the following command lines:
