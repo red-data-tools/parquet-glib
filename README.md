@@ -41,68 +41,10 @@ recommended that you use packages.
 
 ### Package
 
-There are supported platforms:
-
-  * Debian GNU/Linux Stretch
-  * Ubuntu 16.04 LTS or later
-  * CentOS 7
-
-You can feedback to https://github.com/red-data-tools/arrow-packages
-about packages things.
-
-#### Debian GNU/Linux Stretch
-
-You need to add the following apt-lines to
-`/etc/apt/sources.list.d/groonga.list`:
-
-```text
-deb https://packages.groonga.org/debian/ stretch main
-deb-src https://packages.groonga.org/debian/ stretch main
-```
-
-Then you need to run the following command lines:
-
-```text
-% sudo apt update
-% sudo apt install -y --allow-unauthenticated groonga-keyring
-% sudo apt update
-```
-
-Now you can install Parquet GLib packages:
-
-```text
-% sudo apt install -y libparquet-glib-dev
-```
-
-#### Ubuntu 16.04 LTS or later
-
-You need to add an APT repository:
-
-```text
-% sudo apt install -y software-properties-common
-% sudo add-apt-repository -y ppa:groonga/ppa
-% sudo apt update
-```
-
-Now you can install Parquet GLib packages:
-
-```text
-% sudo apt install -y libparquet-glib-dev
-```
-
-#### CentOS 7
-
-You need to add a Yum repository:
-
-```text
-% sudo yum install -y https://packages.groonga.org/centos/groonga-release-1.3.0-1.noarch.rpm
-```
-
-Now you can install Parquet GLib packages:
-
-```text
-% sudo yum install -y --enablerepo=epel parquet-glib-devel
-```
+You can install packages from https://packages.red-data-tools.org/ .
+See
+https://github.com/red-data-tools/packages.red-data-tools.org#readme
+for details.
 
 ### How to build by users
 
@@ -131,7 +73,6 @@ You can build and install Parquet GLib after you install them:
 ```
 
 ### How to build by developers
-
 
 You need to install
 [Parquet C++](https://github.com/apache/parquet-cpp),
