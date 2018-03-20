@@ -39,9 +39,6 @@ Parquet = GI.load("Parquet")
 You can use packages or build by yourself to install Parquet GLib. It's
 recommended that you use packages.
 
-Note that the packages are "unofficial". "Official" packages will be
-released in the future.
-
 ### Package
 
 There are supported platforms:
