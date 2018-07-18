@@ -79,9 +79,9 @@ INTROSPECTION_COMPILER_ARGS =
 
 if HAVE_GPARQUET_GIR_DIR
 INTROSPECTION_SCANNER_ARGS +=				\
-	--add-include-path=/tmp/local/share/gir-1.0
+	--add-include-path=$(GPARQUET_GIR_DIR)
 INTROSPECTION_COMPILER_ARGS +=			\
-	--includedir=/tmp/local/share/gir-1.0
+	--includedir=$(GPARQUET_GIR_DIR)
 endif
 
 Parquet-1.0.gir: libparquet-glib.la
