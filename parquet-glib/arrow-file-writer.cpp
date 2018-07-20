@@ -16,11 +16,7 @@
 #  include <config.h>
 #endif
 
-// #include <arrow-glib/arrow-glib.hpp>
-#include <arrow-glib/error.hpp>
-#include <arrow-glib/output-stream.hpp>
-#include <arrow-glib/schema.hpp>
-#include <arrow-glib/table.hpp>
+#include <arrow-glib/arrow-glib.hpp>
 
 #include <parquet-glib/arrow-file-writer.hpp>
 
