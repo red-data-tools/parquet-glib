@@ -14,6 +14,8 @@
 
 # Parquet GLib
 
+This project has been donated to Apache Arrow: https://github.com/apache/arrow/tree/master/c_glib/parquet-glib
+
 Parquet GLib is a wrapper library for Parquet C++. Parquet GLib
 provides C API.
 
